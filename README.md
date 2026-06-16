@@ -53,4 +53,5 @@ npx tailwindcss@3 -c tailwind.config.js -i src/input.css -o css/tailwind.css --m
 
 ---
 
+Autor: Gabriel Santos — RM 568982
 Projeto acadêmico — Análise e Desenvolvimento de Sistemas (FIAP).
