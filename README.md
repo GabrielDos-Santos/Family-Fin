@@ -1,4 +1,4 @@
-# FamilyFin — Dashboard
+# FamilyFin - Dashboard
 
 Tela de **Dashboard** do projeto fintech **FamilyFin**, um sistema de controle de
 gastos familiares. Atividade de Front-end (HTML + CSS + Tailwind CSS) — FIAP.
