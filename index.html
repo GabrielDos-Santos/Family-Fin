@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FamilyFin — Dashboard</title>
+  <meta name="description" content="FamilyFin — controle de gastos familiares. Acompanhe o orçamento da família em um só lugar." />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-canvas text-ink font-sans antialiased">
+
+  <div class="flex min-h-screen">
+
+    <aside class="sidebar hidden lg:flex lg:flex-col w-64 shrink-0 fixed inset-y-0 left-0 z-30">
+      <div class="flex items-center gap-3 px-6 h-20 border-b border-white/5">
+        <span class="grid place-items-center h-10 w-10 rounded-2xl bg-brand text-white shadow-glow">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg>
+        </span>
+        <span class="text-lg font-semibold tracking-tight text-white">FamilyFin</span>
+      </div>
+
+      <nav class="flex-1 px-3 py-5 space-y-1">
+        <a href="#" aria-current="page" class="nav-link nav-link--active">
+          <svg viewBox="0 0 24 24" class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          Dashboard
+        </a>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="14" y2="17"/></svg>
+          Gastos
+        </a>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Orçamento
+        </a>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Família
+        </a>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6" rx="1"/><rect x="13" y="7" width="3" height="10" rx="1"/></svg>
+          Relatórios
+        </a>
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.81 1.17V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15H4.5a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 6 9.4l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 11 4.6V4.5a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 2.81 1.17l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9h.1a2 2 0 0 1 0 4h-.09Z"/></svg>
+          Configurações
+        </a>
+      </nav>
+
+      <div class="px-3 py-4 border-t border-white/5">
+        <div class="flex items-center gap-3 rounded-2xl px-3 py-2.5 hover:bg-white/5 transition">
+          <span class="avatar avatar--brand">GS</span>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-white truncate">Gabriel Santos</p>
+            <p class="text-xs text-slate-400">Administrador</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="flex-1 lg:ml-64 pb-24 lg:pb-0">
+
+      <header class="sticky top-0 z-20 bg-canvas/80 backdrop-blur border-b border-slate-200/70">
+        <div class="max-w-[1400px] mx-auto px-5 sm:px-8 py-5 flex flex-wrap items-center gap-4">
+          <div class="flex-1 min-w-0">
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">Dashboard</h1>
+            <p class="text-sm text-muted mt-0.5">Resumo financeiro da Família Santos</p>
+          </div>
+
+          <div class="flex items-center gap-3 ml-auto">
+            <div class="month-switch">
+              <button class="month-switch__btn" aria-label="Mês anterior">
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <span class="text-sm font-medium px-1.5 whitespace-nowrap">Abril 2026</span>
+              <button class="month-switch__btn" aria-label="Próximo mês">
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+            <button class="btn-primary">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+              <span class="hidden sm:inline">Novo gasto</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="max-w-[1400px] mx-auto px-5 sm:px-8 py-6 sm:py-8 space-y-6">
+
+        <!-- ===== Cartões de resumo ===== -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Indicadores do mês">
+          <article class="stat-card">
+            <div class="stat-card__icon bg-brand-soft text-brand">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <p class="stat-card__value">R$ 4.320,00</p>
+            <p class="stat-card__label">Total gasto</p>
+            <p class="stat-card__hint">de R$ 6.000 disponível</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon bg-violet-100 text-violet-600">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+            </div>
+            <p class="stat-card__value">8</p>
+            <p class="stat-card__label">Categorias ativas</p>
+            <p class="stat-card__hint text-amber-600">3 próximas do limite</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon bg-emerald-100 text-emerald-600">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>
+            </div>
+            <p class="stat-card__value">72%</p>
+            <p class="stat-card__label">Meta do mês</p>
+            <p class="stat-card__hint">R$ 1.680 restantes</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon bg-amber-100 text-amber-600">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <p class="stat-card__value">4</p>
+            <p class="stat-card__label">Membros ativos</p>
+            <p class="stat-card__hint">últimos 7 dias</p>
+          </article>
+        </section>
+
+        <!-- ===== Linha: Categorias + Transações ===== -->
+        <section class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+          <!-- Gastos por categoria -->
+          <div class="card xl:col-span-2">
+            <div class="card__head">
+              <div>
+                <h2 class="card__title">Gastos por categoria</h2>
+                <p class="card__subtitle">Acompanhe os limites definidos pela família</p>
+              </div>
+            </div>
+
+            <ul class="space-y-5 mt-5">
+              <li class="cat">
+                <div class="cat__top">
+                  <span class="cat__name"><i class="dot bg-emerald-500"></i>Alimentação</span>
+                  <span class="badge badge--warn">Atenção</span>
+                </div>
+                <div class="track"><span class="track__fill bg-amber-400 w-[80%]"></span></div>
+                <p class="cat__values">R$ 1.200 <span class="text-muted">/ R$ 1.500</span></p>
+              </li>
+
+              <li class="cat">
+                <div class="cat__top">
+                  <span class="cat__name"><i class="dot bg-blue-500"></i>Transporte</span>
+                  <span class="badge badge--warn">Atenção</span>
+                </div>
+                <div class="track"><span class="track__fill bg-amber-400 w-[85%]"></span></div>
+                <p class="cat__values">R$ 680 <span class="text-muted">/ R$ 800</span></p>
+              </li>
+
+              <li class="cat">
+                <div class="cat__top">
+                  <span class="cat__name"><i class="dot bg-violet-500"></i>Saúde</span>
+                  <span class="badge badge--warn">Atenção</span>
+                </div>
+                <div class="track"><span class="track__fill bg-amber-400 w-[90%]"></span></div>
+                <p class="cat__values">R$ 450 <span class="text-muted">/ R$ 500</span></p>
+              </li>
+
+              <li class="cat">
+                <div class="cat__top">
+                  <span class="cat__name"><i class="dot bg-amber-500"></i>Educação</span>
+                  <span class="badge badge--warn">Atenção</span>
+                </div>
+                <div class="track"><span class="track__fill bg-amber-400 w-[94%]"></span></div>
+                <p class="cat__values">R$ 850 <span class="text-muted">/ R$ 900</span></p>
+              </li>
+
+              <li class="cat">
+                <div class="cat__top">
+                  <span class="cat__name"><i class="dot bg-red-500"></i>Lazer</span>
+                  <span class="badge badge--over">Excedido</span>
+                </div>
+                <div class="track"><span class="track__fill bg-red-500 w-full"></span></div>
+                <p class="cat__values text-red-600 font-semibold">R$ 490 <span class="text-red-400 font-normal">/ R$ 400</span></p>
+              </li>
+
+              <li class="cat">
+                <div class="cat__top">
+                  <span class="cat__name"><i class="dot bg-emerald-500"></i>Moradia</span>
+                  <span class="badge badge--ok">Normal</span>
+                </div>
+                <div class="track"><span class="track__fill bg-emerald-500 w-[67%]"></span></div>
+                <p class="cat__values">R$ 1.200 <span class="text-muted">/ R$ 1.800</span></p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Transações recentes -->
+          <div class="card flex flex-col">
+            <div class="card__head">
+              <h2 class="card__title">Transações recentes</h2>
+              <a href="#" class="link">Ver todas →</a>
+            </div>
+
+            <ul class="mt-2 divide-y divide-slate-100 -mx-1">
+              <li class="tx">
+                <span class="tx__bullet bg-emerald-500"></span>
+                <div class="tx__body">
+                  <p class="tx__title">Supermercado Extra</p>
+                  <p class="tx__meta">Alimentação · 22/04</p>
+                </div>
+                <span class="tx__value">−R$ 287,50</span>
+              </li>
+              <li class="tx">
+                <span class="tx__bullet bg-blue-500"></span>
+                <div class="tx__body">
+                  <p class="tx__title">Combustível Shell</p>
+                  <p class="tx__meta">Transporte · 21/04</p>
+                </div>
+                <span class="tx__value">−R$ 180,00</span>
+              </li>
+              <li class="tx">
+                <span class="tx__bullet bg-violet-500"></span>
+                <div class="tx__body">
+                  <p class="tx__title">Farmácia Drogasil</p>
+                  <p class="tx__meta">Saúde · 20/04</p>
+                </div>
+                <span class="tx__value">−R$ 95,30</span>
+              </li>
+              <li class="tx">
+                <span class="tx__bullet bg-red-500"></span>
+                <div class="tx__body">
+                  <p class="tx__title">Netflix</p>
+                  <p class="tx__meta">Lazer · 19/04</p>
+                </div>
+                <span class="tx__value">−R$ 39,90</span>
+              </li>
+              <li class="tx">
+                <span class="tx__bullet bg-amber-500"></span>
+                <div class="tx__body">
+                  <p class="tx__title">Escola - Mensalidade</p>
+                  <p class="tx__meta">Educação · 18/04</p>
+                </div>
+                <span class="tx__value">−R$ 850,00</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== Linha: Visão geral (barras) + Status do orçamento (rosca) ===== -->
+        <section class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+          <!-- Gráfico de barras -->
+          <div class="card xl:col-span-2">
+            <div class="card__head">
+              <div>
+                <h2 class="card__title">Visão geral do mês</h2>
+                <p class="card__subtitle">Gastos por dia da semana (R$)</p>
+              </div>
+            </div>
+
+            <div class="chart mt-6">
+              <div class="chart__col">
+                <span class="chart__num">320</span>
+                <div class="chart__bar h-[36%]"></div>
+                <span class="chart__day">Seg</span>
+              </div>
+              <div class="chart__col">
+                <span class="chart__num">580</span>
+                <div class="chart__bar h-[65%]"></div>
+                <span class="chart__day">Ter</span>
+              </div>
+              <div class="chart__col">
+                <span class="chart__num">210</span>
+                <div class="chart__bar h-[24%]"></div>
+                <span class="chart__day">Qua</span>
+              </div>
+              <div class="chart__col">
+                <span class="chart__num">760</span>
+                <div class="chart__bar chart__bar--peak h-[85%]"></div>
+                <span class="chart__day">Qui</span>
+              </div>
+              <div class="chart__col">
+                <span class="chart__num">430</span>
+                <div class="chart__bar h-[48%]"></div>
+                <span class="chart__day">Sex</span>
+              </div>
+              <div class="chart__col">
+                <span class="chart__num">890</span>
+                <div class="chart__bar chart__bar--peak h-full"></div>
+                <span class="chart__day">Sáb</span>
+              </div>
+              <div class="chart__col">
+                <span class="chart__num">150</span>
+                <div class="chart__bar h-[17%]"></div>
+                <span class="chart__day">Dom</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status do orçamento (rosca) -->
+          <div class="card">
+            <div class="card__head">
+              <h2 class="card__title">Status do orçamento</h2>
+            </div>
+
+            <div class="flex flex-col items-center mt-4">
+              <div class="donut" role="img" aria-label="72 por cento do orçamento utilizado">
+                <div class="donut__hole">
+                  <span class="text-3xl font-bold text-brand">72%</span>
+                  <span class="text-xs text-muted">usado</span>
+                </div>
+              </div>
+
+              <dl class="w-full mt-6 space-y-3">
+                <div class="legend">
+                  <dt class="legend__label"><i class="dot bg-brand"></i>Gasto</dt>
+                  <dd class="legend__value">R$ 4.320</dd>
+                </div>
+                <div class="legend">
+                  <dt class="legend__label"><i class="dot bg-emerald-500"></i>Restante</dt>
+                  <dd class="legend__value">R$ 1.680</dd>
+                </div>
+                <div class="legend">
+                  <dt class="legend__label"><i class="dot bg-slate-300"></i>Limite</dt>
+                  <dd class="legend__value">R$ 6.000</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <footer class="pt-2 pb-4 text-center text-xs text-muted">
+          FamilyFin · Controle de gastos familiares - projeto acadêmico FIAP
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <!-- ====================== NAV INFERIOR (mobile) ====================== -->
+  <nav class="bottom-nav lg:hidden " aria-label="Navegação principal">
+    <a href="#" aria-current="page" class="bottom-nav__item bottom-nav__item--active">
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span>Início</span>
+    </a>
+    <a href="#" class="bottom-nav__item">
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="14" y2="17"/></svg>
+      <span>Gastos</span>
+    </a>
+    <a href="#" class="bottom-nav__item">
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span>Orçamento</span>
+    </a>
+    <a href="#" class="bottom-nav__item">
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+      <span>Família</span>
+    </a>
+  </nav>
+
+</body>
+</html>
